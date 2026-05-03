@@ -10,9 +10,6 @@ data/politics_corpus_by_year/
 data/sports_corpus_by_year/
 data/entertainment_corpus_by_year/
 
-# Generated figures (reproducible from CSV + scripts)
-results/figures/
-
 # Python
 __pycache__/
 *.py[cod]
