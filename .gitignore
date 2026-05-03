@@ -1,0 +1,27 @@
+# Large model binaries — download separately (see README)
+models/
+
+# Raw corpora and BIGKinds exports
+data/*.txt
+data/*.xlsx
+data/crime_corpus_by_year/
+data/news_corpus_by_year/
+data/politics_corpus_by_year/
+data/sports_corpus_by_year/
+data/entertainment_corpus_by_year/
+
+# Generated figures (reproducible from CSV + scripts)
+results/figures/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.env
+
+# macOS
+.DS_Store
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
