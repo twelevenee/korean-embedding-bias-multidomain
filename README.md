@@ -60,13 +60,13 @@ All domain corpora tokenized with KoNLPy Okt. Word2Vec: 200d, CBOW, window=5, mi
 
 **Crime news associates 의사 with fraud, not expertise.** Nearest neighbors include 추징, 41억원, 800만원 — medical fraud/corruption contexts. This depresses T2 relative to what the "crime amplifies gender bias" hypothesis would predict.
 
-**Politics is flat across all tests.** Political reporting uses names and titles rather than generic occupational categories, weakening WEAT's co-occurrence signal. Low female-occupation vocabulary coverage (n_Y=4 for T1) further reduces reliability.
+**Politics is flat across all tests — and this is itself a finding about WEAT's scope conditions.** Political reporting refers to actors by name (홍준표, 이재명) and institutional title (국회의원, 대통령) rather than generic occupational categories. The WEAT target words (군인, 간호사, 의사, …) simply do not co-occur with gender cues in political text the way they do in other domains. The null result suggests WEAT is most sensitive in domains where generic occupational labels are used as such — and less informative in domains dominated by person-specific reference. Low female-occupation vocabulary coverage (n_Y=4 for T1) further reduces reliability.
 
 ## Limitations
 
 - Domain corpora cover a single 3-month window (2026-02-05 to 2026-05-02); time-series analysis would require multi-year BIGKinds exports.
 - All domain Word2Vec models trained on ~60-70K sentences — smaller than the pre-trained baselines; effect sizes should be treated as lower bounds.
-- General news model shows degenerate embeddings (near-identical cosine similarities across unrelated words); its results are excluded from interpretation.
+- General news model shows degenerate embeddings (near-identical cosine similarities across unrelated words) and is excluded from interpretation. The likely cause is a combination of factors: the available Naver News dataset covers only economics and IT topics (no 사회/crime), KLUE/YNAT headlines average ~5–8 tokens and provide insufficient context for CBOW co-occurrence learning, and the resulting corpus lacks the topical diversity needed for occupation-gender co-occurrences to accumulate. This is a methodological observation about corpus construction, not a general failure of the news register.
 - Static embeddings only. Contextual models (KLUE-RoBERTa) may produce different patterns.
 - Word sets are generic across domains; domain-adapted sets (e.g., sports-specific female occupations: 치어리더, 여자선수) would improve T1 coverage for sports and politics.
 
